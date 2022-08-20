@@ -24,8 +24,10 @@ self.password = os.getenv("DB_PASS")
 self.database = os.getenv("DB_NAME")
 ```
 
-### Customize you collection/wallet info/ did stuff in marmot_server.py
-You will have to create an [NFT.Storage](https://nft.storage/) account and get an api key
+### Customize collection info
+You will have to create an [NFT.Storage](https://nft.storage/) account and get an api key.
+
+Edit this section in the `marmot_server.py` file:
 
 ```
 RECEIVE_ADDRESS = "xch..."
