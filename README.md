@@ -1,15 +1,22 @@
-### Place these file in `chia/wallet/` directory
-### install additional deps
-```pip install openai
+This is the minting tool used for generating the Marmot World Order (MWO) NFT collection using [DALL-E](https://openai.com/blog/dall-e/).
+
+## Setup Instructions
+
+### Place these files in the `chia/wallet/` directory
+### Install additional dependencies 
+```
+pip install openai
 pip install git+https://github.com/nftstorage/python-client.git
 pip install gino
 ```
 
-### You will need postgresql db, you can run it locally
+### You will need PostgreSQL databse
+You can run this [PostgreSQL](PostgreSQL) db locally.
 
-### Set ENV variable so that marmot_db_api.py can connect to the db
+### Set ENV variable so that marmot_db_api.py can connect to the database
 
-```self.mode = os.getenv("MODE")
+```
+self.mode = os.getenv("MODE")
 self.host = os.getenv("DB_HOST")
 self.port = int(os.getenv("DB_PORT"))
 self.user = os.getenv("DB_USER")
@@ -17,10 +24,13 @@ self.password = os.getenv("DB_PASS")
 self.database = os.getenv("DB_NAME")
 ```
 
-### Customize you collection/wallet info/ did stuff in marmot_server.py
-You will have to create https://nft.storage/ account anf get api key
+### Customize collection info
+You will have to create an [NFT.Storage](https://nft.storage/) account and get an api key.
 
-```RECEIVE_ADDRESS = "xch..."
+Edit this section in the `marmot_server.py` file:
+
+```
+RECEIVE_ADDRESS = "xch..."
 ROYALTY_ADDRESS = "xch..."
 
 XCH_PRICE = 500000000000
@@ -36,16 +46,19 @@ COLLECTION_NAME = "Marmot World Order"
 ROYALTY_PERCENTAGE = 3000
 ```
 
-You will have to create open ai dalle account and get authorization token, replace it in marmot_get.py
+You will have to create an Open AI account, get access to DALL-E, and get authorization token. Put this token in marmot_get.py
 ```
   bearer = "Bearer sess-xxxx"
  ```
 
-### make sure to have a local wallet running & is synced
+### Make sure you have local wallet running and that it is synced
 
-### Run the minter by doing: python chia/wallet/marmot_server.py
+### Run the minter
+```python
+python chia/wallet/marmot_server.py
+```
 
-
+---
 
 MIT License
 
