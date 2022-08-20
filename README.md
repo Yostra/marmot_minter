@@ -11,7 +11,7 @@ pip install gino
 ```
 
 ### You will need PostgreSQL databse
-You can run this [PostgreSQL](PostgreSQL) db locally.
+You can run this [PostgreSQL](https://www.postgresql.org/download/) db locally.
 
 ### Set ENV variable so that marmot_db_api.py can connect to the database
 
