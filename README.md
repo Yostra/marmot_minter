@@ -1,10 +1,13 @@
-Just placed these file in chia/wallet/ directory
-install additional deps
-pip install openai
+### Place these file in `chia/wallet/` directory
+### install additional deps
+```pip install openai
 pip install git+https://github.com/nftstorage/python-client.git
 pip install gino
-you will need postgresql db, you can run it locally
-set ENV variable so that marmot_db_api.py can connect to the db
+```
+
+### You will need postgresql db, you can run it locally
+
+### Set ENV variable so that marmot_db_api.py can connect to the db
 
 ```self.mode = os.getenv("MODE")
 self.host = os.getenv("DB_HOST")
@@ -14,7 +17,9 @@ self.password = os.getenv("DB_PASS")
 self.database = os.getenv("DB_NAME")
 ```
 
-Customize you collection/wallet info/ did stuff in marmot_server.py
+### Customize you collection/wallet info/ did stuff in marmot_server.py
+You will have to create https://nft.storage/ account anf get api key
+
 ```RECEIVE_ADDRESS = "xch..."
 ROYALTY_ADDRESS = "xch..."
 
@@ -31,6 +36,6 @@ COLLECTION_NAME = "Marmot World Order"
 ROYALTY_PERCENTAGE = 3000
 ```
 
-make sure to have a local wallet running & is synced
+### make sure to have a local wallet running & is synced
 
-Run the minter by doing: python chia/wallet/marmot_server.py
+### Run the minter by doing: python chia/wallet/marmot_server.py
