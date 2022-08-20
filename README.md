@@ -36,6 +36,11 @@ COLLECTION_NAME = "Marmot World Order"
 ROYALTY_PERCENTAGE = 3000
 ```
 
+You will have to create open ai dalle account and get authorization token, replace it in marmot_get.py
+```
+  bearer = "Bearer sess-xxxx"
+ ```
+
 ### make sure to have a local wallet running & is synced
 
 ### Run the minter by doing: python chia/wallet/marmot_server.py
